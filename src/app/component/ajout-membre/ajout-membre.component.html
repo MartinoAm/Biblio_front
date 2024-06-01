@@ -1,0 +1,63 @@
+<div class="form-body">
+    <div class="row mx-5">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Enregistrement de nouveau membre</h3>
+                    <p>Tous les champs sont <span class="text-red">required*</span></p>
+                    <hr>
+                    <div class="d-flex">
+                        <div class="mx-5">
+                            <div class="col-md-15">
+                                <label>Nom</label>
+                                <input class="form-control" type="text" placeholder="Entrez le nom"
+                                    [(ngModel)]="membres.nom" [ngModelOptions]="{standalone:true}" required>
+                            </div>
+                            <div class="col-md-15">
+                                <label>Prenom</label>
+                                <input class="form-control" type="text" placeholder="Entrez le prenom"
+                                    [(ngModel)]="membres.prenom" [ngModelOptions]="{standalone:true}" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>Date de naissace</label>
+                                <input class="form-control" type="date" [(ngModel)]="membres.date_naissance"
+                                    [ngModelOptions]="{standalone:true}" required>
+                            </div>
+                        </div>
+
+                        <div class="mx-5">
+                            <div class="col-md-12">
+                                <label>Email</label>
+                                <input class="form-control" type="email" placeholder="exemple@gmail.com"
+                                    [(ngModel)]="membres.email" [ngModelOptions]="{standalone:true}" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Telephone</label>
+                                <input class="form-control" type="text" placeholder="Numero telephone"
+                                    [(ngModel)]="membres.telephone" [ngModelOptions]="{standalone:true}" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>Adresse</label>
+                                <input class="form-control" type="texte" placeholder="Adresse"
+                                    [(ngModel)]="membres.adresse" [ngModelOptions]="{standalone:true}" required>
+                            </div>
+                            <label>Sexe</label>
+                            <select class="form-select" [(ngModel)]="membres.sexe" [ngModelOptions]="{standalone:true}">
+                                <option value="">Selectionner</option>
+                                <option value="male">Male</option>
+                                <option value="femele">Femele</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-button mt-3">
+                        <button id="submit" type="submit" class="btn btn-primary"
+                            (click)="savenewmembers()">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

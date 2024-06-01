@@ -1,0 +1,161 @@
+<div class="row py-2 bg-dark text-white mb-3">
+    <div class="col-lg-15 mx-auto d-flex x">
+        <div class="text-white shadow-sm rounded banner">
+            <h1>Livres dans Bibliotheque</h1>
+        </div>
+        <div>
+            <span class="btn btn-info xbtn" data-bs-toggle="modal" data-bs-target="#ajoutAgent"><i
+                    class="fa fa-plus"></i></span>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="px-lg-3">
+        <div class="row d-flex" *ngIf="livresPack.length > 0">
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-3" *ngFor="let items of livresPack; let i = index">
+                <div class="bg-white rounded xc">
+                    <div class="p-4">
+                        <h5> <a href="#" class="text-dark"><b>{{ items.titre.toLocaleUpperCase() }}</b></a></h5>
+                        <p class="small text-muted mb-0">{{ items.description }}</p>
+                        <div
+                            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                            <p class="small mb-0">
+                                <span class="font-weight-bold">Auteur: <b>{{ items.auteur }}</b></span>
+                            </p>
+                        </div>
+                        <div
+                            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                            <p class="small mb-0">
+                                <span class="font-weight-bold">Date d'edition: <b>{{ items.date_edition }}</b></span>
+                            </p>
+                        </div>
+                        <div
+                            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                            <p class="small mb-0">
+                                <span class="font-weight-bold">Nombre d'exemplaire: <b>{{ items.exemplaire }}</b></span>
+
+                            </p>
+                            <span><i class="fa fa-edit edit" style="color: green;" data-bs-toggle="modal"
+                                    data-bs-target="#updateLivres" (click)="dataUpdate(i)"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="ajoutAgent" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header  bg-dark ">
+                <h1 class="modal-title fs-5 text-white" id="titreModal">Nouvelle livre</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-control">
+                    <div class="content-modal">
+                        <div>
+                            <label>Titre</label>
+                            <input type="text" placeholder="Entrez le titre de livre" class="form-control"
+                                [(ngModel)]="livres.titre" [ngModelOptions]="{standalone: true}">
+                            <label>Type</label>
+                            <select [(ngModel)]="livres.type" [ngModelOptions]="{standalone: true}" class="form-select">
+                                <option value="Album">Album</option>
+                                <option value="Bande dessinee">Bande dessinee</option>
+                                <option value="Contes et fables">Contes et fables</option>
+                                <option value="Dictionnaire">Dictionnaire</option>
+                                <option value="Documentaires">Documentaires</option>
+                                <option value="Magazines">Magazines</option>
+                                <option value="Romans">Romans</option>
+                                <option value="Series">Series</option>
+                                <option value="Philosophie">Philosophie</option>
+                            </select>
+                            <label>Auteur</label>
+                            <input type="text" class="form-control" placeholder="Ecrire le nom de l'auteur"
+                                [(ngModel)]="livres.auteur" [ngModelOptions]="{standalone: true}">
+
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Donner des descrition"
+                                [(ngModel)]="livres.description" [ngModelOptions]="{standalone: true}"></textarea>
+
+                            <label>Nombre d'exemplaire</label>
+                            <input type="number" class="form-control" placeholder="Nombre d'exemplaire"
+                                [(ngModel)]="livres.exemplaire" [ngModelOptions]="{standalone: true}">
+
+                            <label>Date d'edition</label>
+                            <input type="date" class="form-control" [(ngModel)]="livres.date_edition"
+                                [ngModelOptions]="{standalone: true}">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="addnewbook()">
+                    <i class="fa fa-plus mx-2"></i>
+                    <span>Sauvegarder</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="updateLivres" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header  bg-dark ">
+                <h1 class="modal-title fs-5 text-white" id="titreModal">Modifier livre</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-control">
+                    <div class="content-modal">
+                        <div>
+                            <input type="text" [(ngModel)]="livres.id_livre" [ngModelOptions]="{standalone: true}"
+                                style="display: none;">
+                            <label>Titre</label>
+                            <input type="text" placeholder="Entrez le titre de livre" class="form-control"
+                                [(ngModel)]="livres.titre" [ngModelOptions]="{standalone: true}">
+                            <label>Type</label>
+                            <select [(ngModel)]="livres.type" [ngModelOptions]="{standalone: true}" class="form-select">
+                                <option value="Album">Album</option>
+                                <option value="Bande dessinee">Bande dessinee</option>
+                                <option value="Contes et fables">Contes et fables</option>
+                                <option value="Dictionnaire">Dictionnaire</option>
+                                <option value="Documentaires">Documentaires</option>
+                                <option value="Magazines">Magazines</option>
+                                <option value="Romans">Romans</option>
+                                <option value="Series">Series</option>
+                                <option value="Philosophie">Philosophie</option>
+                            </select>
+                            <label>Auteur</label>
+                            <input type="text" class="form-control" placeholder="Ecrire le nom de l'auteur"
+                                [(ngModel)]="livres.auteur" [ngModelOptions]="{standalone: true}">
+
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Donner des descrition"
+                                [(ngModel)]="livres.description" [ngModelOptions]="{standalone: true}"></textarea>
+
+                            <label>Nombre d'exemplaire</label>
+                            <input type="number" class="form-control" placeholder="Nombre d'exemplaire"
+                                [(ngModel)]="livres.exemplaire" [ngModelOptions]="{standalone: true}">
+
+                            <label>Date d'edition</label>
+                            <input type="date" class="form-control" [(ngModel)]="livres.date_edition"
+                                [ngModelOptions]="{standalone: true}">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="update()">
+                    <i class="fa fa-edit mx-2"></i>
+                    <span>Modifier</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

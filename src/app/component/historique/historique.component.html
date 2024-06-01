@@ -1,0 +1,27 @@
+<div class="container-fluid g-0">
+    <div class="text-center mb-5 bg-dark text-white">{{ title }}</div>
+    <div class="table">
+        <table class="table" ngSkipHydration>
+            <thead class="col">
+                <th>Titre Livre</th>
+                <th class="text-center">Description Livre</th>
+                <th>Nom & Prenom</th>
+                <th>Adresse</th>
+                <th>telepone</th>
+                <th>Date retour</th>
+                <th>Action</th>
+            </thead>
+            <tbody *ngFor="let items of historique; let i = index">
+                <td>{{ items.livres.titre.toLocaleUpperCase() }}</td>
+                <td>{{ items.livres.description }}</td>
+                <td>{{ items.membres.nom }} {{ items.membres.prenom }}</td>
+                <td>{{ items.membres.adresse }}</td>
+                <td>{{ items.membres.telephone }}</td>
+                <td>{{ items.retour }}</td>
+                <td>
+                    <span class="btn btn-primary" (click)="setDataBookReturn(i)">Retourner</span>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

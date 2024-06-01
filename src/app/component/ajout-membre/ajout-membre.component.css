@@ -1,0 +1,34 @@
+.form-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0 80px;
+}
+
+.form-content .form-items {
+    border: 3px solid #282626;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+input,
+select {
+    width: 140%;
+    outline: none;
+}
+
+.text-red {
+    color: red;
+    font-weight: 600;
+}

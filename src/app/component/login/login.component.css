@@ -1,0 +1,55 @@
+.content-page {
+    margin: 70px;
+    min-height: 60vh;
+    min-width: 700pt;
+    border-radius: 10px;
+}
+
+.login-form {
+    margin: 60px 2px;
+    box-shadow: 1px 1px 1px rgb(41, 44, 37);
+}
+
+.login-form span:not(.connexion) {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: 25px;
+    color: blue;
+}
+
+input {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 5px;
+    border-style: outset;
+}
+
+.mf {
+    margin: 150px;
+    margin-left: -12px;
+}
+
+img {
+    margin: 0 45px;
+    width: 100px;
+    height: auto;
+}
+
+.connexion {
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.connexion:hover {
+    color: blue;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}

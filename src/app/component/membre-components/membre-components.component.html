@@ -1,0 +1,90 @@
+<div class="row py-2 px-12 bg-dark text-white mb-3 cd">
+    <div class="col-lg-15 mx-auto d-flex x">
+        <div class="text-white shadow-sm rounded banner">
+            <h1>{{ title }}</h1>
+        </div>
+        <div>
+            <input type="search" placeholder="saisir un nom " [(ngModel)]="search">
+            <button class="btn btn-primary" (click)="searchMembre()"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</div>
+<div ngSkipHydration class="table">
+    <table class="table">
+        <thead class="col">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de naissance</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let items of listeMembre; let i = index">
+            <td>{{ items.nom }}</td>
+            <td>{{ items.prenom }}</td>
+            <td>{{ items.date_naissance }}</td>
+            <td>{{ items.adresse }}</td>
+            <td>{{ items.email }}</td>
+            <td>{{ items.telephone }}</td>
+            <td>
+                <i class="fa fa-edit" style="color: green;" data-bs-toggle="modal" data-bs-target="#modifMembre"
+                    (click)="setUpdate(i)"></i>
+                <i class="fa fa-trash" style="color: red;" (click)="delete(i)"></i>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modifMembre" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header  bg-dark ">
+                <h1 class="modal-title fs-5 text-white" id="titreModal">Modification info de Membres</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-control">
+                    <div class="content-modal">
+                        <div>
+                            <input type="text" style="display: none;" [(ngModel)]="membres.id_membre"
+                                [ngModelOptions]="{standalone:true}">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" [(ngModel)]="membres.nom"
+                                [ngModelOptions]="{standalone: true}">
+
+                            <label>Prenom</label>
+                            <input type="text" class="form-control" [(ngModel)]="membres.prenom"
+                                [ngModelOptions]="{standalone: true}">
+
+                            <label>Date de naissance</label>
+                            <input type="date" class="form-control" [(ngModel)]="membres.date_naissance"
+                                [ngModelOptions]="{standalone: true}">
+
+                            <label>Email</label>
+                            <input type="text" class="form-control" [(ngModel)]="membres.email"
+                                [ngModelOptions]="{standalone: true}">
+
+                            <label>Telephone</label>
+                            <input type="text" class="form-control" [(ngModel)]="membres.telephone"
+                                [ngModelOptions]="{standalone: true}">
+
+                            <label>Adresse</label>
+                            <input type="text" class="form-control" [(ngModel)]="membres.adresse"
+                                [ngModelOptions]="{standalone: true}">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="update()">
+                    <i class="fa fa-edit mx-2"></i>
+                    <span>Modifier</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

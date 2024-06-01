@@ -1,0 +1,89 @@
+<nav class="bg-dark d-flex flex-column text-white min-vh-100">
+    <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+        <span class="mb-3"></span>
+        <span class="sidebar-brand d-flex align-items-center justify-content-center mb-3">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-wine-bottle"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><i class="fa fa-book mx-2"
+                    style="cursor: pointer; font-size: 2.2rem;"></i> Bibliotheque
+                <sup>301</sup>
+            </div>
+        </span>
+        <hr class="sidebar-divider my-0">
+    </ul>
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+        <li class="mb-5"></li>
+        <li>
+            <a href="/layout/dashboard" class="nav-link px-0 align-middle">
+                <i class="fa fa-tachometer mx-2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="/layout/livre" class="nav-link px-0 align-middle ">
+                <i class="fa fa-book mx-2"></i> <span class="ms-1 d-none d-sm-inline">Livres</span>
+            </a>
+        </li>
+        <li>
+            <a href="#supmenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fa fa-users mx-2"></i> <span class="ms-1 d-none d-sm-inline">Membres</span>
+            </a>
+            <ul class="collapse nav flex-column ms-1" id="supmenu3" data-bs-parent="#menu">
+                <li class="w-100">
+                    <a href="/layout/nouveau_membre" class="nav-link px-0">
+                        <i class="fa fa-plus-circle mx-2"></i>
+                        <span>Nouveau</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/layout/listeMembres" class="nav-link px-0">
+                        <i class="fa fa-bars mx-2"></i>
+                        <span>Liste</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/layout/emprunte" class="nav-link px-0 align-middle">
+                <i class="fa fa-bookmark mx-2"></i> <span class="ms-1 d-none d-sm-inline">Empruntes</span>
+            </a>
+        </li>
+        <li>
+            <a href="/layout/historiques" class="nav-link px-0 align-middle">
+                <i class="fa fa-history mx-2"></i> <span class="ms-1 d-none d-sm-inline">Historiques</span>
+            </a>
+        </li>
+    </ul>
+
+    <hr class="sidebar-divider my-0">
+    <div class="dropdown pb-4">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
+            <li>
+                <a href="#profile" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fa fa-user-circle mx-2"></i> <span class="ms-1 d-none d-sm-inline">Admin
+                        <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+                </a>
+                <ul class="collapse nav flex-column ms-1" id="profile" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="#" class="nav-link px-0">
+                            <i class="fa fa-user mx-2"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0">
+                            <i class="fa fa-sign-in mx-2" style="color: green;"></i>
+                            <span>s'incrire</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a router-link="/login" class="nav-link px-0">
+                            <i class="fa fa-sign-out mx-2" style="color: red;"></i>
+                            <span>Deconnexion</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

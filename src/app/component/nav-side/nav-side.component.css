@@ -1,0 +1,13 @@
+a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: wheat;
+}
+
+nav {
+    height: 1000vh;
+}

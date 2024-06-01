@@ -1,0 +1,9 @@
+div .table {
+    margin: 0 15px;
+    box-shadow: 1px 1px 1px rgb(71, 68, 66);
+}
+
+.text-white {
+    font-size: 35px;
+    height: 70px;
+}

@@ -1,0 +1,45 @@
+i.fa {
+    cursor: pointer;
+}
+
+.table {
+    margin: 0 15px;
+    box-shadow: 2px 1px 2px rgb(88, 84, 84);
+}
+
+td:hover {
+    box-shadow: 1px 0 1px rgb(88, 84, 84);
+}
+
+.x {
+    display: flex;
+    justify-content: space-around;
+}
+
+.xbt {
+    margin: 15px;
+}
+
+.xc {
+    box-shadow: 1px 2px 1px 2px rgb(61, 57, 65);
+}
+
+.edit {
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.edit:hover {
+    font-size: 25px;
+}
+
+.cd {
+    width: 850pt;
+}
+
+input {
+    outline: none;
+    margin: 4px;
+    border-radius: 10px;
+}
